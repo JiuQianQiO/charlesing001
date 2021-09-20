@@ -22,37 +22,38 @@ public class Controller {
     @Autowired
     StudentService studentService;
 
-@Autowired
+    @Autowired
     MyStudentService myStudentService;
 
     @ResponseBody
     @GetMapping("/sel")
-    public List<Student> sel(){
+    public List<Student> sel() {
         return studentService.ListStudent();
     }
+
     @RequestMapping(value = "/stu")
     @ResponseBody
-    public  Student stu(@RequestParam("id") Integer id){
+    public Student stu(@RequestParam("id") Integer id) {
         return studentService.getStudent(id);
     }
 
 
     @ResponseBody
     @RequestMapping("/byid")
-    public Student Byid(@RequestParam("id") Integer id){
-      return   studentService.getById(id);
+    public Student Byid(@RequestParam("id") Integer id) {
+        return studentService.getById(id);
     }
 
     @GetMapping("sql")
     @ResponseBody
-    public  String sql(){
+    public String sql() {
         Long aLong = jdbcTemplate.queryForObject("select count(*) from student", Long.class);
         return aLong.toString();
     }
 
     @ResponseBody
     @GetMapping("/plus")
-    public  List<Student> plus(Model model){
+    public List<Student> plus(Model model) {
         List<Student> list = myStudentService.list();
         /**
          * 通过mybatis -plus 获取的数据，
