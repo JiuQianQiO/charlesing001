@@ -1,0 +1,16 @@
+server:
+  port: 8001
+
+
+spring:
+  application:
+    name: cloud-payment-service   #项目的名称
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: '000000'
+    driver-class-name: com.mysql.cj.jdbc.Driver   #MySQL 驱动包
+    type: com.alibaba.druid.pool.DruidDataSource   #当前数据源的操作类型
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zhi.cloud.entities   # 所有 Entity 别名类所在的包 就是javaBean 的包
