@@ -1,0 +1,26 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: localhost  # eureka服务端的实例名称
+  client:
+    # false 表示不向注册中心注册自己
+    register-with-eureka: false
+    # false 表示自己就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    fetch-registry: false
+    service-url:
+      # 设置 Eureka Server交互服务的地址，查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: cloud-payment-service   #项目的名称
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: '000000'
+    driver-class-name: com.mysql.cj.jdbc.Driver   #MySQL 驱动包
+    type: com.alibaba.druid.pool.DruidDataSource   #当前数据源的操作类型
+
+
+
