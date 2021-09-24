@@ -12,6 +12,10 @@
     <artifactId>cloud-consumer-order80</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 <!--        引入自己的 api 通用包，-->
 <!--        <dependency>-->
 <!--            <groupId>com.zhi.springCloud</groupId>-->
