@@ -1,0 +1,18 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center # 注册进 Eureka 服务中的名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JiuQianQiO/mySpringMVC.git  # 在GitHub 上搜索 git 仓库的名称
+          ## 搜索目录,也就是仓库的名称
+          search-paths:
+            - mySpringMVC
+      label: config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
