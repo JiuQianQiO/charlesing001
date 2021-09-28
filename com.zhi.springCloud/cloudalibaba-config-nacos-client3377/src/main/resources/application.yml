@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: dev # 表面当前环境是一个 开发环境 根据bootstrap。yaml 中的配置可以读取 nacos 上面 的开发文件
+#    active: test # 表面当前环境是一个 测试环境，根据bootstrap。yaml 中的配置可以读取 nacos 上面 的测试文件
+    # 两个配置文件结合起来就是，去配置中心上面读取一个文件后缀名位 yaml 的配置文件，

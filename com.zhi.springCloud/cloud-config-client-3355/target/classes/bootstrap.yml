@@ -11,6 +11,13 @@ spring:
       profile: dev   # 读取后缀名称
       ## 上述3个综合：config 分支上 config-dev.yml 文件的配置文件被读取： http://config-3344.com:3344/config/config-dev.yml
       uri: http://localhost:3344  # 配置中心地址
+# rabbitMQ 相关配置， 15672是web 管理界面的端口，5672是MQ访问的端口
+  # 在这里不能写在最顶格，是写在 spring 的下面
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
 eureka:
   client:
     service-url:

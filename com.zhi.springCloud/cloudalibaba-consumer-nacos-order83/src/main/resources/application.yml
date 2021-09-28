@@ -1,0 +1,14 @@
+server:
+  port: 83
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  # 配置nacos 的地址
+##  设置消费将要去访问的微服务的名称（就是成功注册进 nacos 的微服务提供者），在这里写，就不用在controller中定义
+##  方便以后修改，在controller中使用 @Value 注入就可以，这样可以解耦和
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+

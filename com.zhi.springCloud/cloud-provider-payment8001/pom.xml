@@ -12,6 +12,11 @@
     <artifactId>cloud-provider-payment8001</artifactId>
 
    <dependencies>
+       <!--zipkin sleuth-->
+       <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-starter-zipkin</artifactId>
+       </dependency>
        <!--        eureka client 要想使用你必须加入Eureka的客户端-->
        <dependency>
            <groupId>org.springframework.cloud</groupId>

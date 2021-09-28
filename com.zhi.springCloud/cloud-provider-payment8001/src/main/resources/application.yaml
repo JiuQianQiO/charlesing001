@@ -5,6 +5,13 @@ server:
 spring:
   application:
     name:  cloud-payment-service   #项目的名称
+    # 配置监控的结构显示在 zipkin 的页面上
+  zipkin:
+    base-url: http://localhost:9411
+    # 设置采样率介质值，0~1之间  1 表示全部采样
+  sleuth:
+    sampler:
+      probability: 1
   datasource:
     url: jdbc:mysql://localhost:3306/cloud?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
     username: root
