@@ -14,6 +14,4 @@ public class PaymentController {
     public  String getPayment(@PathVariable("id") int id){
         return " Nacos  registry,  serverPort :  "+ serverPort + "\t ,id :"+ id;
     }
-
-
 }
