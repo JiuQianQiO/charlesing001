@@ -1,0 +1,33 @@
+server:
+  port: 2002
+spring:
+  application:
+    name: seata-storage-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: seata_group
+    #      seata:
+    #        # 自定义事务分组名称，需要与 SeaTa-server中的对应
+    #        tx-service-group: seata_group
+    nacos:
+      discovery:
+        # Nacos 服务注册中心的地址
+        server-addr: localhost:8848
+  datasource:
+    url: jdbc:mysql://localhost:3306/seata_storage?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: '000000'
+    driver-class-name: com.mysql.cj.jdbc.Driver   #MySQL 驱动包
+    type: com.alibaba.druid.pool.DruidDataSource   #当前数据源的操作类型
+
+feign:
+  hystrix:
+    enabled: false
+logging:
+  level:
+    io:
+      seata: info
+mybatis:
+  mapper-locations: classpath:mapper/StorageMapper.xml
+  #type-aliases-package: com.zhi.springcloud.alibaba.domain
